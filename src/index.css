@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Birthday celebration theme with spiritual and tech elements */
+    --background: 352 100% 99%;
+    --foreground: 345 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 345 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 25% 15%;
+
+    /* Golden celebration primary */
+    --primary: 45 95% 55%;
+    --primary-foreground: 345 25% 15%;
+
+    /* Warm purple secondary */
+    --secondary: 280 60% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 350 20% 95%;
+    --muted-foreground: 345 15% 45%;
+
+    /* Spiritual blue accent */
+    --accent: 220 70% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 350 30% 90%;
+    --input: 350 30% 90%;
+    --ring: 45 95% 55%;
+
+    /* Royal purple and blue slideshow theme */
+    --celebration: 45 100% 60%;
+    --spiritual: 270 85% 65%;  /* Royal purple */
+    --tech: 240 100% 70%;      /* Royal blue */
+    --warm: 25 85% 65%;
+    --royal-purple: 270 85% 65%;
+    --royal-blue: 240 100% 70%;
+    --deep-purple: 260 90% 45%;
+    --electric-blue: 220 100% 60%;
+    
+    /* Royal gradients */
+    --gradient-celebration: linear-gradient(135deg, hsl(var(--royal-purple)), hsl(var(--royal-blue)));
+    --gradient-spiritual: linear-gradient(180deg, hsl(var(--spiritual)), hsl(var(--electric-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--royal-purple)), hsl(var(--deep-purple)), hsl(var(--royal-blue)));
+    --gradient-royal: linear-gradient(45deg, hsl(270 85% 65%), hsl(240 100% 70%), hsl(220 100% 60%));
+    --gradient-slide: linear-gradient(135deg, hsl(260 90% 45% / 0.9), hsl(240 100% 70% / 0.9));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode celebration theme */
+    --background: 345 25% 8%;
+    --foreground: 350 20% 95%;
+
+    --card: 345 20% 12%;
+    --card-foreground: 350 20% 95%;
+
+    --popover: 345 20% 12%;
+    --popover-foreground: 350 20% 95%;
+
+    --primary: 45 95% 65%;
+    --primary-foreground: 345 25% 8%;
+
+    --secondary: 280 50% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 345 15% 20%;
+    --muted-foreground: 350 10% 60%;
+
+    --accent: 220 60% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 350 20% 95%;
+
+    --border: 345 15% 25%;
+    --input: 345 15% 25%;
+    --ring: 45 95% 65%;
+
+    /* Dark mode royal colors */
+    --celebration: 45 95% 65%;
+    --spiritual: 270 75% 70%;
+    --tech: 240 90% 75%;
+    --warm: 25 75% 60%;
+    --royal-purple: 270 75% 70%;
+    --royal-blue: 240 90% 75%;
+    --deep-purple: 260 80% 55%;
+    --electric-blue: 220 90% 70%;
+    
+    /* Dark royal gradients */
+    --gradient-celebration: linear-gradient(135deg, hsl(var(--royal-purple)), hsl(var(--royal-blue)));
+    --gradient-spiritual: linear-gradient(180deg, hsl(var(--spiritual)), hsl(var(--electric-blue)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--royal-purple)), hsl(var(--deep-purple)), hsl(var(--royal-blue)));
+    --gradient-royal: linear-gradient(45deg, hsl(270 75% 70%), hsl(240 90% 75%), hsl(220 90% 70%));
+    --gradient-slide: linear-gradient(135deg, hsl(260 80% 55% / 0.9), hsl(240 90% 75% / 0.9));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-celebration {
+    background: var(--gradient-celebration);
+  }
+  
+  .gradient-spiritual {
+    background: var(--gradient-spiritual);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-royal {
+    background: var(--gradient-royal);
+  }
+  
+  .gradient-slide {
+    background: var(--gradient-slide);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animate-slide-out {
+    animation: slideOut 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateX(100px) scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideOut {
+  from { 
+    opacity: 1; 
+    transform: translateX(0) scale(1);
+  }
+  to { 
+    opacity: 0; 
+    transform: translateX(-100px) scale(0.95);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px hsl(var(--royal-purple) / 0.5), 
+                 0 0 20px hsl(var(--royal-purple) / 0.3), 
+                 0 0 30px hsl(var(--royal-blue) / 0.2);
+  }
+  to {
+    text-shadow: 0 0 20px hsl(var(--royal-purple) / 0.8), 
+                 0 0 30px hsl(var(--royal-purple) / 0.6), 
+                 0 0 40px hsl(var(--royal-blue) / 0.4);
+  }
+}
