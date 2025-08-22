@@ -132,6 +132,9 @@ const BirthdaySlideshow = () => {
         <div className="text-4xl animate-bounce-gentle">
           🎉🎂🎊
         </div>
+        <div className="text-4xl">
+          ~JPartner
+        </div>
       </div>
     </div>
   );
